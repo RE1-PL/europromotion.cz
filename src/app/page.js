@@ -3,32 +3,42 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col row-start-2 items-center sm:items-start">
+      
+      <header className="sr-only">
+        <h1>Euro Promotion</h1>
+      </header>
 
-          <Image 
-          src="/logo_legacy.png"
-          width="75"
-          height="75"
-          alt="logo"
-          />
-        <ul className="mt-[25px]">
-          <li><a href="https://account.re1.pl">manage account</a></li>
-          <li><a href="https://cloud.re1.pl/iot">iot dashboard <span className="text-red-600"></span></a></li>
-          <li><a href="https://blog.re1.pl/">blog <span className="text-red-600">[offline]</span></a></li>
-          <div className="mb-[25px]"></div>
-          <li><a href="https://jenkins.524531.xyz/login" target="_blank" rel="noopener noreferrer">jenkins <span className="text-green-600"></span></a></li>
-          <li><a href="https://status.re1.pl/">statuspage</a></li>
-          <li><a href="https://github.re1.pl/" target="_blank" rel="noopener noreferrer">github</a></li>
-          <div className="mb-[25px]"></div>
-          <li className="text-lg">Contact:</li>
-          <li><a href="mailto:ntds@re1.pl">ntds@re1.pl</a></li>
-          <li><a href="https://github.com/ntds">github.com/ntds</a></li>
-          <li className="text-xs">&copy; 2025</li>
-        </ul>
+      <main className="flex flex-col row-start-2 items-center sm:items-start text-center sm:text-left">
+        <Image 
+          src="/logo_cropped.png"
+          width={300}
+          height={75}
+          alt="EuroPromotion logo"
+          priority
+        />
+
+        <section className="mt-6">
+          <h2 className="text-lg font-semibold mb-4 sr-only">Naše služby</h2>
+          <ul className="space-y-2">
+            <li className="font-semibold">Zde najdete kompletní nabídku našich služeb.</li>
+            <li>Pracujeme na tom</li>
+          </ul>
+        </section>
+
+        <address className="not-italic mt-8 space-y-2 text-sm">
+          <div>
+            <a href="mailto:office@europromotion.cz" className="underline">office@europromotion.cz</a>
+          </div>
+          <div>
+            <a href="tel:+420605796588" className="underline">+420 605 796 588</a>
+          </div>
+          <div>Jaurisova 515/4, 140 00 Praha 4</div>
+        </address>
+
+        <div className="mt-6 text-xs">2025 EuroPromotion</div>
       </main>
-      <div class="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded shadow-md text-sm z-50">
-        Services may be offline due to server migration.
-      </div>
+
+      <footer />
     </div>
   );
 }
